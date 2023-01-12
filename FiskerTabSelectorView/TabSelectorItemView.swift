@@ -18,18 +18,22 @@ struct TabSelectorItem: Hashable, Identifiable {
 
 struct TabSelectorItemView: View {
     var item: TabSelectorItem
+    @Binding var selectedIndex: Int
     
-    var titleColor: Color = Color.gray
     var selectedTitleColor: Color = Color.black
+    var unselectedTitleColor: Color = Color.gray
+    var titleFont: Font = Font.system(
+        size: 16,
+        weight: Font.Weight.bold
+    )
+    
     var underlineColor: Color = Color.orange
-    var underlineViewHeight: CGFloat = 5.0
+    var underlineViewHeight: CGFloat = 2.0
     
     var isSelected: Bool {
         self.item.index == selectedIndex
     }
-    
-    @Binding var selectedIndex: Int
-    
+
     var body: some View {
         GeometryReader { geometryReader in
             Button {
@@ -37,7 +41,8 @@ struct TabSelectorItemView: View {
             } label: {
                 VStack(spacing: 0) {
                     Text(item.title)
-                        .foregroundColor(isSelected ? selectedTitleColor : titleColor)
+                        .font(titleFont)
+                        .foregroundColor(isSelected ? selectedTitleColor : unselectedTitleColor)
                         .frame(height: geometryReader.size.height - underlineViewHeight)
                     
                     Rectangle()
@@ -54,9 +59,8 @@ struct TabSelectorItemView_Previews: PreviewProvider {
         let item = TabSelectorItem(index: 0, title: "First")
         TabSelectorItemView(
             item: item,
-            selectedIndex: .constant(item.index)
+            selectedIndex: .constant(0)
         )
-        .frame(height: 80)
-        .background(Color.purple)
+        .frame(height: 60)
     }
 }

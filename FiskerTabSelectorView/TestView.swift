@@ -9,10 +9,9 @@ import SwiftUI
 
 struct TestView: View {
     var items: [TabSelectorItem] = [
-        TabSelectorItem(index: 0, title: "Hari"),
-        TabSelectorItem(index: 1, title: "Kishna"),
-        TabSelectorItem(index: 2, title: "Bista"),
-        TabSelectorItem(index: 3, title: "boka")
+        TabSelectorItem(index: 0, title: "Sport"),
+        TabSelectorItem(index: 1, title: "Extreme"),
+        TabSelectorItem(index: 2, title: "Ultra")
     ]
 
     @State private var selectedIndex = 0
@@ -23,7 +22,7 @@ struct TestView: View {
                 items: items,
                 selectedIndex: $selectedIndex
             )
-            .frame(height: 100)
+            .frame(height: 60)
             
             Text("selectedIndex: \(selectedIndex)")
             
