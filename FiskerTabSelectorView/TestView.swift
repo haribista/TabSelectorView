@@ -24,10 +24,11 @@ struct TestView: View {
             )
             .frame(height: 60)
             
-            Text("selectedIndex: \(selectedIndex)")
-            
             Spacer()
+            
+            Text("selectedIndex: \(selectedIndex)")
         }
+        .padding(.vertical, 100)
     }
 }
 
