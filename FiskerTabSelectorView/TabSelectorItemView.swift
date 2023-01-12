@@ -7,26 +7,42 @@
 
 import SwiftUI
 
-struct TabSelectorItemView: View {
-    var title = "A"
-    var titleColor: Color = Color.gray
-    var selectorColor: Color = Color.orange
+struct TabSelectorItem: Hashable, Identifiable {
+    var id: Int {
+        index
+    }
     
-    var underlineViewHeight: Double = 10.0
+    var index: Int
+    var title: String
+}
+
+struct TabSelectorItemView: View {
+    var item: TabSelectorItem
+    
+    var titleColor: Color = Color.gray
+    var selectedTitleColor: Color = Color.black
+    var underlineColor: Color = Color.orange
+    var underlineViewHeight: CGFloat = 5.0
+    
+    var isSelected: Bool {
+        self.item.index == selectedIndex
+    }
+    
+    @Binding var selectedIndex: Int
     
     var body: some View {
         GeometryReader { geometryReader in
             Button {
-                print("Item selecged: \(title)")
+                selectedIndex = item.index
             } label: {
                 VStack(spacing: 0) {
-                    Text(title)
-                        .foregroundColor(titleColor)
-                        .frame(height: geometryReader.size.height)
+                    Text(item.title)
+                        .foregroundColor(isSelected ? selectedTitleColor : titleColor)
+                        .frame(height: geometryReader.size.height - underlineViewHeight)
                     
                     Rectangle()
                         .frame(height: underlineViewHeight)
-                        .foregroundColor(selectorColor)
+                        .foregroundColor(isSelected ? underlineColor: Color.clear)
                 }
             }
         }
@@ -35,8 +51,12 @@ struct TabSelectorItemView: View {
 
 struct TabSelectorItemView_Previews: PreviewProvider {
     static var previews: some View {
-        TabSelectorItemView()
-            .frame(height: 80)
-            .background(Color.purple)
+        let item = TabSelectorItem(index: 0, title: "First")
+        TabSelectorItemView(
+            item: item,
+            selectedIndex: .constant(item.index)
+        )
+        .frame(height: 80)
+        .background(Color.purple)
     }
 }

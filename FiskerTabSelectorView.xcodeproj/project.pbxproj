@@ -12,6 +12,7 @@
 		3F175F25296F8FE8000C1DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F175F24296F8FE8000C1DDA /* Assets.xcassets */; };
 		3F175F28296F8FE8000C1DDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F175F27296F8FE8000C1DDA /* Preview Assets.xcassets */; };
 		3F175F2F296F92E2000C1DDA /* TabSelectorItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F175F2E296F92E2000C1DDA /* TabSelectorItemView.swift */; };
+		3F175F31296FB07E000C1DDA /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F175F30296FB07E000C1DDA /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		3F175F24296F8FE8000C1DDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F175F27296F8FE8000C1DDA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F175F2E296F92E2000C1DDA /* TabSelectorItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSelectorItemView.swift; sourceTree = "<group>"; };
+		3F175F30296FB07E000C1DDA /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				3F175F22296F8FE6000C1DDA /* TabSelectorView.swift */,
 				3F175F24296F8FE8000C1DDA /* Assets.xcassets */,
 				3F175F26296F8FE8000C1DDA /* Preview Content */,
+				3F175F30296FB07E000C1DDA /* TestView.swift */,
 			);
 			path = FiskerTabSelectorView;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F175F31296FB07E000C1DDA /* TestView.swift in Sources */,
 				3F175F23296F8FE6000C1DDA /* TabSelectorView.swift in Sources */,
 				3F175F21296F8FE6000C1DDA /* FiskerTabSelectorViewApp.swift in Sources */,
 				3F175F2F296F92E2000C1DDA /* TabSelectorItemView.swift in Sources */,
