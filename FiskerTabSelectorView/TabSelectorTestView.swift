@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TestView: View {
+struct TabSelectorTestView: View {
     var items: [TabSelectorItem] = [
         TabSelectorItem(index: 0, title: "Sport"),
         TabSelectorItem(index: 1, title: "Extreme"),
@@ -32,8 +32,8 @@ struct TestView: View {
     }
 }
 
-struct TestView_Previews: PreviewProvider {
+struct TabSelectorTestView_Previews: PreviewProvider {
     static var previews: some View {
-        TestView()
+        TabSelectorTestView()
     }
 }

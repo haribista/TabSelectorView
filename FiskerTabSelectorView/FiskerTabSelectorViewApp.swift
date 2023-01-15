@@ -11,7 +11,7 @@ import SwiftUI
 struct FiskerTabSelectorViewApp: App {
     var body: some Scene {
         WindowGroup {
-            TestView()
+            TabSelectorTestView()
         }
     }
 }
